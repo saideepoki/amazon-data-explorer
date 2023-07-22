@@ -1,7 +1,5 @@
 # Amazon Data Explorer
 
-![Amazon Data Explorer](https://example.com/amazon_data_explorer_screenshot.png)
-
 Amazon Data Explorer is a web application built using Node.js, Express.js, and MongoDB to efficiently extract real-time product data from Amazon and provide intelligent recommendations based on customer reviews. The application aims to enhance decision-making for shoppers by offering valuable insights into product specifications and rankings.
 
 ## Features
@@ -16,12 +14,12 @@ Amazon Data Explorer is a web application built using Node.js, Express.js, and M
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/saideepoki/Amazon-Data-Explorer.git`
-2. Install dependencies: `npm install`
+1. Clone the repository: ```git clone https://github.com/saideepoki/Amazon-Data-Explorer.git```
+2. Install dependencies: ```npm install```
 
 ## Usage
 
-1. Run the application: `npm start`
+1. Run the application: ```npm start```
 2. Open your web browser and visit: `http://localhost:8000`
 
 ## Technologies Used
