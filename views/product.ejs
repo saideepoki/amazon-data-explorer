@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/product.css">
+    <title><%= title %></title>
+</head>
+<body>
+
+    <!-- navbar -->
+    <nav>
+        <ul>
+          <li id = "navbar-heading">Amazon Product Explorer</li>
+          <li><a href="#carousel">Images</a></li>
+          <li><a href="#product-info">Product Information</a></li>
+        </ul>
+    </nav>
+    <!-- images -->
+
+<div class = "carousel-container">
+    <div class="carousel">
+        <% for (const image of product_information.images) { %>
+          <div class="carousel-item">
+            <img src="<%= image %>" alt="Product Image">
+          </div>
+        <% } %>
+      </div>
+      
+      <button class="carousel-button carousel-button-prev">&lt;</button>
+      <button class="carousel-button carousel-button-next">&gt;</button>
+</div>
+
+
+
+
+
+
+    <!-- table for product info -->
+    <table id = "product-info">
+        <tr id = "heading">
+          <th>Feature</th>
+          <th>Details</th>
+        </tr>
+        <tr>
+          <td>Product Name</td>
+          <td><%= product_information.name %></td>
+        </tr>
+        <tr>
+          <td>Brand</td>
+          <td><a href="<%= product_information.brand_url %>"><%= product_information.brand %></a></td>
+        </tr>
+        <tr>
+          <td>Price</td>
+          <td><%= product_information.pricing %> (List Price: <%= product_information.list_price %>)</td>
+        </tr>
+        <tr>
+          <td>Availability</td>
+          <td><%= product_information.availability_status %></td>
+        </tr>
+        <tr>
+          <td>Shipping</td>
+          <td><%= product_information.shipping_price %></td>
+        </tr>
+        <% for (const [key, value] of Object.entries(product_information.product_information)) { %>
+          <tr>
+            <td><%= key %></td>
+            <td><%= value %></td>
+          </tr>
+        <% } %>
+      </table>
+
+      <script src="/js/productImage.js"></script>
+      
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reviews.css">
+    <title>Top 20 Products</title>
+</head>
+<body>
+    <!-- navbar -->
+    <nav>
+        <ul>
+            <li id="navbar-heading">Top 20 Products</li>
+        </ul>
+    </nav>
+
+    <!-- Introduction text -->
+    <div class="intro-text">
+        <p>Welcome to our analysis of the top 20 recommended products on Amazon! Our team has carefully curated a list of the most popular and highly-rated items based on customer reviews and ratings. We've analyzed the data to bring you the best recommendations for your shopping needs. Browse our selection and discover the top products that Amazon has to offer!</p>
+    </div>
+
+    <!-- Top 20 Products List -->
+    <div class="top-products">
+        <% for (const product of top20) { %>
+        <div class="product-card">
+            <img src="<%= product.image %>" alt="Product Image">
+            <h3><a href="<%= product.url %>" target="_blank"><%= product.name %></a></h3>
+            <% if (product.stars !== null && product.total_reviews !== null) { %>
+                <div class="rating-price-container">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <p><%= product.stars %> (Total Reviews: <%= product.total_reviews %>)</p>
+                    </div>
+                    <p class="price">Price: <%= product.price_string %></p>
+                </div>
+            <% } else { %>
+                <p>Rating: Not Available</p>
+                <p class="price">Price: <%= product.price_string %></p>
+            <% } %>
+        </div>
+        <% } %>
+    </div>
+
+
+</body>
+</html>
